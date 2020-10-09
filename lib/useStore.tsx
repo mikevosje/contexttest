@@ -16,14 +16,11 @@ export const useGlobalState = <K extends keyof State>(property: K) => {
 };
 
 // @ts-ignore
-export type AuthContext = {
-    signIn: (data: { email: string, password: string }) => void,
-    signOut: () => void,
-    register: (data: { companyname: string, email: string, password: string }) => Promise<object>
-}
+export type AuthContext = {}
+
 let authCtx = createContext<AuthContext>({});
 
-function Provider(props) {
+function Provider(props: any) {
     // const dispatch = useDispatch();
 
     const authContext = useMemo(
