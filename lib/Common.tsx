@@ -3,19 +3,24 @@ export type Action = {
     token?: string,
     loadingText?: string,
     coordinates?: { lat: number, lng: number },
-    activities: [],
+    activities: Array<any>
     count: number
 }
 
 export const initialState = {
     isLoading: false,
     loadingText: 'Laden...',
+    coordinates: {lat: 0, lng: 0},
+    activities: [],
+    count: 0
 }
 
 export type State = {
     isLoading: boolean,
     loadingText: string,
     coordinates: { lat: number, lng: number },
+    activities: Array<any>,
+    count: number
 }
 
 export const reducer = (state: State, action: Action) => {
