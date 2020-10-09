@@ -79,6 +79,7 @@ export const useAuthContext = () => {
 }
 
 export const StateProvider: React.ComponentType = ({children}: StateProviderProps) => {
+    // @ts-ignore
     const [state, dispatch] = useReducer(reducer, initialState);
 
     return <dispatchCtx.Provider value={dispatch}>

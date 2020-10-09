@@ -1,9 +1,11 @@
+import {Activity} from "./types";
+
 export type Action = {
     type: 'RESTORE_TOKEN' | 'LOADING' | 'STOP_LOADING' | 'SIGN_IN' | 'SIGN_OUT' | 'UPDATE_ACTIVITIES_COUNT' | 'UPDATE_ACTIVITIES' | 'SET_COORDINATES',
     token?: string,
     loadingText?: string,
     coordinates?: { lat: number, lng: number },
-    activities: Array<any>
+    activities: Activity[]
     count: number
 }
 
@@ -19,7 +21,7 @@ export type State = {
     isLoading: boolean,
     loadingText: string,
     coordinates: { lat: number, lng: number },
-    activities: Array<any>,
+    activities: Activity[],
     count: number
 }
 
