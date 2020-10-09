@@ -1,6 +1,6 @@
 import React, {createContext, useContext, useMemo, useReducer} from 'react';
 // import {AxiosLogin, AxiosPost, AxiosRegister, removeUserToken, setLoginData} from "./useAxios";
-import {StateProviderProps} from "../types/types";
+import {StateProviderProps} from "./types";
 import {Action, initialState, reducer, State} from './Common';
 
 const stateCtx = createContext(initialState);
@@ -24,7 +24,7 @@ export type AuthContext = {
 let authCtx = createContext<AuthContext>({});
 
 function Provider(props) {
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
     const authContext = useMemo(
         () => ({
