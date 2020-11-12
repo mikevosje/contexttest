@@ -3,6 +3,11 @@ import styles from '../styles/Home.module.css'
 import { useEffect } from "react";
 import { useDispatch, useGlobalState } from "../lib/useStore";
 import Link from "next/link";
+import { Activity } from "../lib/types";
+
+interface FilterData {
+  activities: Activity[]
+}
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -11,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     async function getData() {
       const res = await fetch('https://login.uitjesplaats.nl/api/filter');
-      const newData = await res.json();
+      const newData: FilterData = await res.json();
       dispatch({ type: 'UPDATE_ACTIVITIES', activities: newData.activities });
     }
     
@@ -32,7 +37,7 @@ export default function Home() {
         <Link href={'/subpage'}>Go to link</Link>
         
         {activity && activity.length > 0 && activity.map((item, key) => (
-          <div style={{marginBottom: '80px'}}>
+          <div style={{ marginBottom: '80px' }}>
             <Link href={'/subpage'}>{item.name}</Link>
           </div>
         ))}

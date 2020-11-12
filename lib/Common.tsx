@@ -2,14 +2,14 @@ import {Activity} from "./types";
 
 export type Action = {
     type: 'RESTORE_TOKEN' | 'LOADING' | 'STOP_LOADING' | 'SIGN_IN' | 'SIGN_OUT' | 'UPDATE_ACTIVITIES_COUNT' | 'UPDATE_ACTIVITIES' | 'SET_COORDINATES',
-    token?: string,
-    loadingText?: string,
-    coordinates?: { lat: number, lng: number },
+    token: string,
+    loadingText: string,
+    coordinates: { lat: number, lng: number },
     activities: Activity[]
     count: number
 }
 
-export const initialState = {
+export const initialState: State = {
     isLoading: false,
     loadingText: 'Laden...',
     coordinates: {lat: 0, lng: 0},
